@@ -374,6 +374,11 @@ void ProcessArgument(const std::string arg, const std::string developer_dir,
     }
   }
 
+  if (new_arg == "arm64-apple-watchos5.0-simulator") {
+      new_arg = "arm64-apple-watchos5.0";
+  }
+  FindAndReplace("WatchSimulator", "WatchOS", &new_arg);
+
   consumer(new_arg);
 }
 
